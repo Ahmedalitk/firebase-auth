@@ -9,6 +9,7 @@ import styles from "./Login.module.css";
 
 function Login() {
   const navigate = useNavigate();
+
   const [values, setValues] = useState({
     email: "",
     pass: "",
@@ -24,6 +25,7 @@ function Login() {
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
+    
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);

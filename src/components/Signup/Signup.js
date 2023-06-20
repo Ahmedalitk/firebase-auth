@@ -25,6 +25,7 @@ function Signup() {
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
+    
     createUserWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
@@ -32,7 +33,7 @@ function Signup() {
         await updateProfile(user, {
           displayName: values.name,
         });
-        navigate("/");
+        navigate("/login");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
@@ -43,7 +44,7 @@ function Signup() {
   return (
     <div className={styles.container}>
       <div className={styles.innerBox}>
-        <h1 className={styles.heading}>Signup</h1>
+        <h1 className={styles.heading}>Sign up</h1>
 
         <InputControl
           label="Name"
@@ -70,8 +71,9 @@ function Signup() {
         <div className={styles.footer}>
           <b className={styles.error}>{errorMsg}</b>
           <button onClick={handleSubmission} disabled={submitButtonDisabled}>
-            Signup
+            Sign up
           </button>
+
           <p>
             Already have an account?{" "}
             <span>
