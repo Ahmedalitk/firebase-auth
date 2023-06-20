@@ -32,7 +32,7 @@ function App() {
     <div className="App"style={myStyle}>
       <Router>
         <Routes>
-          <Route path="/login" element={<Lnogin />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home name={userName} />} />
         </Routes>

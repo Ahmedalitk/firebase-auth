@@ -22,7 +22,7 @@ function Home(props) {
           <Link to="/signup">Signup</Link>
         </h1>
 
-        <Link className={styles.footer} onClick={logout} to='/login'>Logout</Link>
+        <Link  onClick={logout} to='/login'>Logout</Link>
         
       </div>
 
